@@ -28,31 +28,17 @@ flutter pub get
 flutter run
 ```
 
-## AdMob configuration
 
-The project currently uses Google's sample **test** App IDs and ad unit IDs.
-Keep test IDs during development; replace them with your own IDs before
-publishing:
-
-- Android App ID: `android/app/src/main/AndroidManifest.xml`, in the
-  `com.google.android.gms.ads.APPLICATION_ID` value.
-- iOS App ID: `ios/Runner/Info.plist`, in the `GADApplicationIdentifier` value.
-- Android and iOS banner, interstitial, and rewarded ad unit IDs:
-  `lib/services/ad_service.dart` (`bannerId`, `interstitialId`, and
-  `rewardedId`).
-
-App IDs contain `~`; ad unit IDs contain `/`. Use the IDs for the matching
-platform and ad format.
 
 ## Project structure
 
-- `lib/main.dart` — app entry point and AdMob initialization.
+- `lib/main.dart` — app entry point.
 - `lib/screens/` — home, game, settings, and result screens.
 - `lib/models/` — puzzle state and game settings.
-- `lib/services/` — puzzle generation, local storage, sound, haptics, and ads.
+- `lib/services/` — puzzle generation, local storage, sound, haptics.
 - `lib/widgets/` — reusable wooden-themed game controls and board widgets.
 - `assets/audio/` — bundled WAV sound effects.
-- `android/` and `ios/` — native platform configuration, including AdMob App IDs.
+- `android/` and `ios/` — native platform configuration
 
 ## Validate and build
 
@@ -63,17 +49,3 @@ flutter build apk --release
 ```
 
 
-for admob replacement 
-Android
-
-App ID: AndroidManifest.xml:8
-Banner Ad Unit ID: ad_service.dart:15
-Interstitial Ad Unit ID: ad_service.dart:21
-Rewarded Ad Unit ID: ad_service.dart:27
-
-iOS
-
-App ID: Info.plist:20
-Banner Ad Unit ID: ad_service.dart:16
-Interstitial Ad Unit ID: ad_service.dart:22
-Rewarded Ad Unit ID: ad_service.dart:28
